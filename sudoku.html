@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function checkSudoku() {
+            // Sudoku tahtasındaki tüm hücreleri kontrol et
+            for (var i = 1; i <= 9; i++) {
+                for (var j = 1; j <= 9; j++) {
+                    var cell = document.getElementById('cell_' + i + '_' + j);
+                    var value = cell.innerText.trim();
+
+                    // Eğer bir değer girilmemişse veya geçersiz bir değer girilmişse uyarı ver
+                    if (value === '') {
+                        alert('Lütfen tüm hücreleri doldurun.');
+                        return;
+                    }
+                }
+            }
+
+            // Sudoku'nun kurallarına göre doğruluğunu kontrol et
+            // Buraya Sudoku'nun kurallarını uygulayacak kodu ekleyebilirsiniz
+
+            // Oyunun tamamlandığını kontrol et
+            alert('Tebrikler! Sudoku tamamlandı!');
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Sudoku</h1>
+    <table border=0>
+        <tr>
+            <td class="r1" colspan=13></td>
+        </tr>
+        <tr>
+            <td class="a1"></td>
+
+            <td class="a2" id="cell_1_2">5</td>
+            <td class="a2" id="cell_1_3">3</td>
+            <td class="a2" id="cell_1_4">4</td>
+
+            <td class="a1"></td>
+
+            <td class="a2" id="cell_1_6">6</td>
+            <td class="a2" id="cell_1_7">7</td>
+            <td class="a2" id="cell_1_8">8</td>
+
+            <td class="a1"></td>
+
+            <td class="a2" id="cell_1_9">9</td>
+            <td class="a2" id="cell_1_10">1</td>
+            <td class="a2" id="cell_1_11">2</td>
+
+            <td class="a1"></td>
+        </tr>
+        <!-- Diğer satırlar buraya eklenecek -->
+        <tr>
+            <td class="r1" colspan=13></td>
+        </tr>
+    </table>
+    <button onclick="checkSudoku()">Sudoku'yu Kontrol Et</button>
+</body>
+
+</html>
